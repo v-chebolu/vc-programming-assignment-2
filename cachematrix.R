@@ -14,8 +14,9 @@
 
 ## makeCacheMatrix:
 ## Accept a matrix as input argument, and return a matrix-like entity
-## that facilitates caching of matrix inverse - a list of functions that
-## get the matrix, set the matrix, get the inverse, and set the inverse.
+## that facilitates caching of matrix inverse. The return value is 
+## actually a list of functions that get the matrix, set the matrix, 
+## get the inverse, and set the inverse.
 ##
 makeCacheMatrix <- function(x = matrix()) {
     s <- NULL
@@ -31,9 +32,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## cacheSolve:
-## Get the inverse of the matrix-like entity returned by the makeCacheMatrix
-## function. See if a cahced inverse value is available, and if so, return 
-## it. If not, calculate the inverse, save it in cache, and return it.
+## Accept a matrix-like entity returned by makeCacheMatrix as an input argument
+## and return the inverse of the underlying matrix. If a valid cached inverse
+## value exists, just return it. If not, compute and cache the inverse, and also
+## return it.
+## The first argument to this function is a matrix-like entity returned by
+## makeCacheMatrix. Remaining arguments are passed unchanged as the arguments
+## after the matrix argument to solve(), the matrix inverse computation function.
 ##
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
