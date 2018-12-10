@@ -2,13 +2,13 @@
 ## of a matrix. Use them as follows:
 ##
 ## - first call makeCacheMatrix with the matrix as argument, 
-##   and save result to a variable, say cm.
+##   and save result to a variable, say, cm.
 ##
 ## - call cacheSolve(cm) to get the matrix's inverse. It will compute
 ##   the inverse only if a cached inverse value is not available.
 ##
 ## - if there is a need to work with a new matrix, call cm$set() with
-##   the new matrix as input argument. Subsequent calls to CacheSolve()
+##   the new matrix as input argument. Subsequent calls to CacheSolve(cm)
 ##   will provide the inverse of this new matrix.
 ## 
 
